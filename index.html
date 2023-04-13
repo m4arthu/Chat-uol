@@ -21,14 +21,24 @@
           <ion-icon name="people"></ion-icon>
         </nav>
     </header>
+    <div class="modal-container" id="modal-loggin"> 
+            <img src="./images/logo 1.svg" alt="">
+
+            <div class="loggin-area">
+                <input id="nome" placeholder="Digite seu nome..." type="text">
+                <button onclick="chatLoggin()">Entrar</button>
+            </div>
+       
+    </div>
     <div class="container">
         <ul id="ulmessages">
+            Carregando Mensagens...
         </ul>
     </div>
     <footer>
         <div class="footer-container">
             <textarea name="message" id="message" cols="30"  placeholder="Escreva aqui..."></textarea>
-            <ion-icon name="paper-plane-outline"></ion-icon>
+            <ion-icon   onclick="enviarMensagem()" name="paper-plane-outline"></ion-icon>
         </div>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
