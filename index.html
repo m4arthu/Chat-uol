@@ -17,8 +17,8 @@
 <body>
     <header>
         <nav>
-          <img src="./images/logo 1.svg" alt="">
-          <ion-icon name="people"></ion-icon>
+        <img src="./images/logo 1.svg" alt="">
+          <ion-icon name="people"></ion-icon> 
         </nav>
     </header>
     <div class="modal-container" id="modal-loggin"> 
@@ -37,8 +37,8 @@
     </div>
     <footer>
         <div class="footer-container">
-            <textarea name="message" id="message" cols="30"  placeholder="Escreva aqui..."></textarea>
-            <ion-icon   onclick="enviarMensagem()" name="paper-plane-outline"></ion-icon>
+            <textarea data-test="input-message" name="message" id="message"   placeholder="Escreva aqui..."></textarea>
+            <ion-icon  data-test="send-message" onclick="enviarMensagem()" name="paper-plane-outline"></ion-icon>
         </div>
     </footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
