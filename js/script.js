@@ -19,8 +19,11 @@ function chatLoggin(){
         modal.classList.remove("modal-container")
         modal.removeAttribute("id")
         modal.classList.add("d-none")
+        renderizarMensagens()
+        setInterval(()=>{
+            keepConection()
+        },5000)
         setInterval(()=> {
-            
             renderizarMensagens()
         },3000)
     })
@@ -40,10 +43,7 @@ function renderizarMensagens() {
         for(let i = msgs.length; i > 0 ; i-- ) {
             ulmensagens.innerHTML += 
             `<li data-test="message"><p>
-            <time>(${msgs[msgs.length - [i]].time})</time>
-            <strong>${msgs[msgs.length -[i]].from}</strong>
-            ${msgs[msgs.length -[i]].text}
-            </p></li>`
+            <time>(${msgs[msgs.length - [i]].time})</time><strong>${msgs[msgs.length -[i]].from}</strong>para <strong>${msgs[msgs.length - [i]].to}</strong>${msgs[msgs.length -[i]].text}</p></li>`
         }
     }).catch()
     
@@ -53,10 +53,7 @@ function keepConection()  {
     axios.post("https://mock-api.driven.com.br/api/vm/uol/status", {name:user})
 }
 
-setInterval(()=>{
-    keepConection()
-    console.log("mantendo a conezão")
-},5000)
+
 
 
 function enviarMensagem() {
