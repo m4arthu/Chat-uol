@@ -29,7 +29,7 @@ function chatLoggin(){
     })
     loggin.catch(()=> {
         window.alert("o nome ja  esta em uso digite  outro!!")
-        document.getElementById("nome") = ""
+        document.getElementById("nome").value = ""
     })
 }
 
@@ -64,11 +64,12 @@ function enviarMensagem() {
         text: messages.value,
         type: "message"
     }
-   let promisse =  axios.post("https://mock-api.driven.com.br/api/vm/uol/messages",messageData).catch(()=> {
-        window.location.reload()
-    })
+   let promisse =  axios.post("https://mock-api.driven.com.br/api/vm/uol/messages",messageData)
     promisse.then(()=> {
         renderizarMensagens()
+    })
+    promisse.catch(() => {
+        window.location.reload()
     })
     messages.value = ""
 }
